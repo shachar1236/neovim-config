@@ -46,4 +46,9 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without copy
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replase word" })
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace word" })
+--
+-- comment
+vim.keymap.set("n", "<leader>/", "<cmd>CommentToggle<CR>", { desc = "Comment" })
+vim.keymap.set("v", "<leader>/", "<cmd>'<,'>CommentToggle<CR>", { desc = "Comment" })
+vim.keymap.set("x", "<leader>/", "<cmd>'<,'>CommentToggle<CR>", { desc = "Comment" })

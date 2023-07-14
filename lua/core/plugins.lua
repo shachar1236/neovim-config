@@ -86,6 +86,15 @@ local plugins = {
         dependencies = {
             "nvim-lua/plenary.nvim"
         }
+    },
+    {
+        "Exafunction/codeium.vim",
+    },
+    {
+        "numToStr/Comment.nvim"
+    },
+    {
+        "terrortylor/nvim-comment",
     }
 }
 

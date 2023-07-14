@@ -13,38 +13,12 @@ lsp.nvim_workspace()
 -- mappings
 local cmp = require('cmp')
 
-local has_words_before = function()
-      unpack = unpack or table.unpack
-      local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-      return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-    end
-
 local cmp_mappings = lsp.defaults.cmp_mappings({
     -- `Enter` key to confirm completion
     ['<CR>'] = cmp.mapping.confirm({select = false}),
 
     -- Ctrl+Space to trigger completion menu
     ['<C-Space>'] = cmp.mapping.complete(),
-
-    ["<Tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
-          cmp.select_next_item()
-        -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-        -- this way you will only jump inside the snippet region
-        elseif has_words_before() then
-          cmp.complete()
-        else
-          fallback()
-        end
-      end, { "i", "s" }),
-      ["<S-Tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_prev_item()
-        else
-          fallback()
-        end
-      end, { "i", "s" }),
 })
 
 lsp.setup_nvim_cmp({
