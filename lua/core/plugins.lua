@@ -81,9 +81,13 @@ local plugins = {
             {'rafamadriz/friendly-snippets'},
         }
     },
+    {
+        "joechrisellis/lsp-format-modifications.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim"
+        }
+    }
 }
-
-local opts = {}
 
 -- setting plugins
 require("lazy").setup(plugins, opts)
