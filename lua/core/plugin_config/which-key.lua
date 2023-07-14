@@ -6,5 +6,11 @@ wk.register({
     },
     ["<leader>b"] = {
         name = "buffers",
-    }
+    },
+    ["<leader>l"] = {
+        name = "lsp",
+    },
+    ["<leader>lr"] = {
+        name = "symbol",
+    },
 }, opts)
