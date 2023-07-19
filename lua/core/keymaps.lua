@@ -24,10 +24,25 @@ vim.keymap.set('n', '<S-l>', '<Cmd>BufferNext<CR>', { noremap=true, desc = "Move
 vim.keymap.set('n', '<A-l>', '<Cmd>BufferMoveNext<CR>', { noremap=true, desc = "Move buffer right"})
 vim.keymap.set('n', '<A-h>', '<Cmd>BufferMovePrevious<CR>', { noremap=true, desc = "Move buffer left"})
 
+-- New buffer
+vim.keymap.set('n', '<leader>bn', '<Cmd>enew<CR>', { noremap = true, desc = "New buffer" })
 -- Pin/unpin buffer
 vim.keymap.set('n', '<leader>bp', '<Cmd>BufferPin<CR>', { noremap=true, desc = "Pin buffer" })
 -- Close buffer
-vim.keymap.set('n', '<leader>bc', '<Cmd>BufferClose<CR>', { noremap=true, desc = "Close buffer" })
+vim.keymap.set('n', '<leader>bc', '<Cmd>bd<CR>', { noremap = true, desc = "Close buffer" })
+
+-- splits
+vim.keymap.set('n', '<leader>|', '<Cmd>vs<CR>', { noremap = true, desc = "Vertical split" })
+vim.keymap.set('n', '<leader>_', '<Cmd>split<CR>', { noremap = true, desc = "Horizontal split" })
+
+vim.keymap.set('n', '<leader>sv', '<Cmd>vs<CR>', { noremap = true, desc = "Vertical split" })
+vim.keymap.set('n', '<leader>sh', '<Cmd>split<CR>', { noremap = true, desc = "Horizontal split" })
+--
+--
+--
+--
+--
+--
 --
 -- the primegen remaps
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

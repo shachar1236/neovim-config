@@ -10,6 +10,9 @@ wk.register({
     ["<leader>l"] = {
         name = "lsp",
     },
+    ["<leader>s"] = {
+        name = "splits",
+    },
     ["<leader>lr"] = {
         name = "symbol",
     },
