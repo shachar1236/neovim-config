@@ -25,3 +25,11 @@ vim.opt.smartcase = true            -- but make it case sensitive if an uppercas
 
 -- Color scheme
 vim.o.termguicolors = true
+-- auto save
+-- Autosave buffers
+vim.cmd('set autowriteall')
+
+-- Autocommand to save buffers when leaving or losing focus
+vim.cmd([[
+  autocmd BufLeave,FocusLost * :wall
+]])
