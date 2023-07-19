@@ -37,6 +37,8 @@ vim.keymap.set('n', '<leader>_', '<Cmd>split<CR>', { noremap = true, desc = "Hor
 
 vim.keymap.set('n', '<leader>sv', '<Cmd>vs<CR>', { noremap = true, desc = "Vertical split" })
 vim.keymap.set('n', '<leader>sh', '<Cmd>split<CR>', { noremap = true, desc = "Horizontal split" })
+-- close neovim
+vim.keymap.set('n', '<leader>q', '<Cmd>qa<CR>', { noremap = true, desc = "Quit neovim" })
 --
 --
 --

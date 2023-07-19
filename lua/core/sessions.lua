@@ -15,10 +15,22 @@ vim.o.sessionoptions = table.concat({
     'buffers', 'curdir', 'tabpages', 'winsize', 'resize', 'winpos'
 }, ',')
 
+local function DoesNeedRestore()
+    if #vim.api.nvim_list_uis() > 0 then
+        -- Check if Neovim UI is running (not headless)
+        if #vim.v.argv > 1 then
+            -- Check if command-line arguments are present
+            -- Perform actions based on the arguments
+            return false
+        else
+            return true
+        end
+    else
+        return true
+    end
+end
 -- Function to save the current session
 function Save_session()
-    -- makes new buffer so it doesn't mess up the current buffer
-    vim.cmd('enew')
     -- save session
     local session_file = session_dir .. current_dir_bare
     vim.cmd('mksession! ' .. session_file)
@@ -26,14 +38,15 @@ end
 
 -- Function to restore the session
 function Restore_session()
-    -- remove new buffer so it doesn't mess up the current buffer
-    vim.defer_fn(function()
-        vim.cmd('bd')
-    end, 0)
-    -- restore session
-    local session_file = session_dir .. current_dir_bare
-    if vim.fn.filereadable(session_file) ~= 0 then
-        vim.cmd('source ' .. session_file)
+    if DoesNeedRestore() then
+        vim.defer_fn(function()
+            vim.cmd('filetype detect')
+        end, 0)
+        -- restore session
+        local session_file = session_dir .. current_dir_bare
+        if vim.fn.filereadable(session_file) ~= 0 then
+            vim.cmd('source ' .. session_file)
+        end
     end
 end
 
@@ -42,3 +55,5 @@ vim.cmd('autocmd VimLeavePre * lua Save_session()')
 
 -- Automatically restore the session and source the regular config when Vim is started
 vim.cmd('autocmd VimEnter * lua Restore_session()')
+
+
