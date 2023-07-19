@@ -19,6 +19,8 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 
     -- Ctrl+Space to trigger completion menu
     ['<C-Space>'] = cmp.mapping.complete(),
+    -- prefer codium over lsp completion
+    ['<Tab>'] = cmp.mapping.select_next_item(),
 })
 
 lsp.setup_nvim_cmp({
