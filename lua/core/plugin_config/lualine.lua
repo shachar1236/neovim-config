@@ -1,7 +1,7 @@
 require('lualine').setup(
     {
         options = {
-            theme = 'palenight',
+            theme = 'catppuccin',
             sections = {
                 lualine_a = { 'mode' },
                 lualine_b = { 'branch', 'diff', 'diagnostics' },

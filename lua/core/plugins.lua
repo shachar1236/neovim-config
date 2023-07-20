@@ -102,6 +102,10 @@ local plugins = {
     },
     {
         "tpope/vim-fugitive",
+    },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
     }
 }
 
