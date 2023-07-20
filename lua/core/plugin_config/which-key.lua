@@ -16,6 +16,9 @@ wk.register({
     ["<leader>g"] = {
         name = "git",
     },
+    ["<leader>ga"] = {
+        name = "add",
+    },
     ["<leader>lr"] = {
         name = "symbol",
     },
