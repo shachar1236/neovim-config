@@ -39,7 +39,10 @@ vim.keymap.set('n', '<leader>sv', '<Cmd>vs<CR>', { noremap = true, desc = "Verti
 vim.keymap.set('n', '<leader>sh', '<Cmd>split<CR>', { noremap = true, desc = "Horizontal split" })
 -- close neovim
 vim.keymap.set('n', '<leader>q', '<Cmd>qa<CR>', { noremap = true, desc = "Quit neovim" })
---
+-- git
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Git status" })
+vim.keymap.set("n", "<leader>gp", ":Git push<CR>", { desc = "Git push" })
+vim.keymap.set("n", "<leader>gP", ":Git pull<CR>", { desc = "Git pull" })
 --
 --
 --
