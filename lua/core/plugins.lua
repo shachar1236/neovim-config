@@ -91,9 +91,6 @@ local plugins = {
         "Exafunction/codeium.vim",
     },
     {
-        "numToStr/Comment.nvim"
-    },
-    {
         "terrortylor/nvim-comment",
     },
     {
@@ -106,6 +103,12 @@ local plugins = {
     {
         "catppuccin/nvim",
         name = "catppuccin",
+    },
+    {
+      "ray-x/lsp_signature.nvim",
+      event = "VeryLazy",
+      opts = {},
+      config = function(_, opts) require'lsp_signature'.setup(opts) end
     }
 }
 

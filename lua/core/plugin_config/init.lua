@@ -7,6 +7,7 @@ require("core.plugin_config.treesitter")
 require("core.plugin_config.lsp")
 require("core.plugin_config.nvim-comment")
 require("core.plugin_config.lualine")
+require("core.plugin_config.lsp_signature")
 
 --- last
 require("core.plugin_config.which-key")
