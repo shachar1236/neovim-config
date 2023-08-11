@@ -13,6 +13,9 @@ wk.register({
     ["<leader>s"] = {
         name = "splits",
     },
+    ["<leader>u"] = {
+        name = "utils",
+    },
     ["<leader>g"] = {
         name = "git",
     },

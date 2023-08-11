@@ -37,6 +37,33 @@ vim.keymap.set('n', '<leader>_', '<Cmd>split<CR>', { noremap = true, desc = "Hor
 
 vim.keymap.set('n', '<leader>sv', '<Cmd>vs<CR>', { noremap = true, desc = "Vertical split" })
 vim.keymap.set('n', '<leader>sh', '<Cmd>split<CR>', { noremap = true, desc = "Horizontal split" })
+
+function Adjust_width(change)
+    local current_width = vim.api.nvim_win_get_width(0)
+    vim.api.nvim_win_set_width(0, current_width + change)
+end
+
+-- Function to adjust split height
+function Adjust_height(change)
+    local current_height = vim.api.nvim_win_get_height(0)
+    vim.api.nvim_win_set_height(0, current_height + change)
+end
+
+-- Function to equalize split sizes
+function Equalize_splits()
+    vim.api.nvim_exec('wincmd =', true)
+end
+
+vim.keymap.set('n', '<leader>s+', '<Cmd>lua Adjust_height(1)<CR>', { noremap = true, desc = "Increase split height" })
+vim.keymap.set('n', '<leader>s-', '<Cmd>lua Adjust_height(-1)<CR>', { noremap = true, desc = "Decrease split height" })
+vim.keymap.set('n', '<leader>s>', '<Cmd>lua Adjust_width(1)<CR>', { noremap = true, desc = "Increase split width" })
+vim.keymap.set('n', '<leader>s<', '<Cmd>lua Adjust_width(-1)<CR>', { noremap = true, desc = "Decrease split width" })
+vim.keymap.set('n', '<leader>s=', '<Cmd>lua Equalize_splits()<CR>', { noremap = true, desc = "Equalize split" })
+
+-- terminal
+vim.keymap.set('n', '<leader>t', '<Cmd>split<CR><Cmd>terminal<CR>G', { noremap = true, desc = "Open terminal" })
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true, desc = "Normal mode" })
+
 -- close neovim
 vim.keymap.set('n', '<leader>q', '<Cmd>qa<CR>', { noremap = true, desc = "Quit neovim" })
 -- git
@@ -66,9 +93,7 @@ vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Patse without copying" })
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without copying" })
 
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace word" })
+vim.keymap.set("n", "<leader>us", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace word" })
 --
 -- comment
 vim.keymap.set("n", "<leader>/", "<cmd>CommentToggle<CR>", { desc = "Comment" })

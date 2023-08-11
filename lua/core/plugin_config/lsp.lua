@@ -50,8 +50,8 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, { buffer = bufnr, remap = false, desc="Signature help" })
 
   -- formatting
-  local lsp_format_modifications = require"lsp-format-modifications"
-    lsp_format_modifications.attach(client, bufnr, { format_on_save = true })
+  -- local lsp_format_modifications = require"lsp-format-modifications"
+    -- lsp_format_modifications.attach(client, bufnr, { format_on_save = false })
 end)
 
 lsp.setup()
