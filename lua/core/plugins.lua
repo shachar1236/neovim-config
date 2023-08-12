@@ -114,6 +114,9 @@ local plugins = {
     },
     {
         "rmagatti/auto-session"
+    },
+    {
+        "f-person/git-blame.nvim"
     }
 }
 
