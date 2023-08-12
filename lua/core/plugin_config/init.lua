@@ -9,6 +9,7 @@ require("core.plugin_config.nvim-comment")
 require("core.plugin_config.lualine")
 require("core.plugin_config.lsp_signature")
 require("core.plugin_config.neoscroll")
+require("core.plugin_config.auto_session")
 
 --- last
 require("core.plugin_config.which-key")

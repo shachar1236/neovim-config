@@ -99,3 +99,6 @@ vim.keymap.set("n", "<leader>us", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left>
 vim.keymap.set("n", "<leader>/", "<cmd>CommentToggle<CR>", { desc = "Comment" })
 vim.keymap.set("v", "<leader>/", "<cmd>'<,'>CommentToggle<CR>", { desc = "Comment" })
 vim.keymap.set("x", "<leader>/", "<cmd>'<,'>CommentToggle<CR>", { desc = "Comment" })
+
+-- lsp
+vim.keymap.set("n", "<leader>lf", function() vim.lsp.buf.format({ async = true }) end, { desc = "Format" })

@@ -111,6 +111,9 @@ local plugins = {
     },
     {
         "karb94/neoscroll.nvim"
+    },
+    {
+        "rmagatti/auto-session"
     }
 }
 
