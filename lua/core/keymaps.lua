@@ -59,6 +59,8 @@ vim.keymap.set('n', '<leader>s-', '<Cmd>lua Adjust_height(-1)<CR>', { noremap = 
 vim.keymap.set('n', '<leader>s>', '<Cmd>lua Adjust_width(1)<CR>', { noremap = true, desc = "Increase split width" })
 vim.keymap.set('n', '<leader>s<', '<Cmd>lua Adjust_width(-1)<CR>', { noremap = true, desc = "Decrease split width" })
 vim.keymap.set('n', '<leader>s=', '<Cmd>lua Equalize_splits()<CR>', { noremap = true, desc = "Equalize split" })
+vim.keymap.set('n', '<leader>s_', '<C-w>_', { noremap = true, desc = "Max split height" })
+vim.keymap.set('n', '<leader>s|', '<C-w>|', { noremap = true, desc = "Max split width" })
 
 -- terminal
 vim.keymap.set('n', '<leader>t', '<Cmd>split<CR><Cmd>terminal<CR>G', { noremap = true, desc = "Open terminal" })
