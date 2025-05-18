@@ -104,3 +104,13 @@ vim.keymap.set("x", "<leader>/", "<cmd>'<,'>CommentToggle<CR>", { desc = "Commen
 
 -- lsp
 vim.keymap.set("n", "<leader>lf", function() vim.lsp.buf.format({ async = true }) end, { desc = "Format" })
+vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, { buffer = bufnr, remap = false, desc = "Go to definition" })
+vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, { buffer = bufnr, remap = false, desc = "Hover" })
+vim.keymap.set("n", "<leader>ls", function() vim.lsp.buf.workspace_symbol() end, { buffer = bufnr, remap = false, desc="Find symbol" })
+vim.keymap.set("n", "<leader>ld", function() vim.diagnostic.open_float() end, { buffer = bufnr, remap = false, desc="Diagnose line" })
+vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, { buffer = bufnr, remap = false, desc="Next diagnosed line" })
+vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, { buffer = bufnr, remap = false, desc="Previous diagnosed line" })
+vim.keymap.set("n", "<leader>la", function() vim.lsp.buf.code_action() end, { buffer = bufnr, remap = false, desc="Code action" })
+vim.keymap.set("n", "<leader>lrr", function() vim.lsp.buf.references() end, { buffer = bufnr, remap = false, desc="Find references" })
+vim.keymap.set("n", "<leader>lrn", function() vim.lsp.buf.rename() end, { buffer = bufnr, remap = false, desc="Rename symbol" })
+vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, { buffer = bufnr, remap = false, desc="Signature help" })

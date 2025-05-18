@@ -54,33 +54,25 @@ local plugins = {
         'nvim-treesitter/nvim-treesitter',
         build = ":TSUpdate",
     },
+    {'williamboman/mason.nvim'},
+    {'williamboman/mason-lspconfig.nvim'},
+    {'neovim/nvim-lspconfig'},
+    -- Autocompletion
     {
-      'VonHeikemen/lsp-zero.nvim',
-      branch = 'v2.x',
-      dependencies = {
-            -- LSP Support
-            {'neovim/nvim-lspconfig'},             -- Required
-            {                                      -- Optional
-              'williamboman/mason.nvim',
-              build = function()
-                pcall(vim.cmd, 'MasonUpdate')
-              end,
-            },
-            {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-            -- Autocompletion
-            {'hrsh7th/nvim-cmp'},
-            {'hrsh7th/cmp-buffer'},
-            {'hrsh7th/cmp-path'},
-            {'saadparwaiz1/cmp_luasnip'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'hrsh7th/cmp-nvim-lua'},
-
-            -- Snippets
-            {'L3MON4D3/LuaSnip'},
-            {'rafamadriz/friendly-snippets'},
-        }
+        'hrsh7th/nvim-cmp',
+        config = function()
+          require('core.plugin_config.nvim-cmp')
+        end,
     },
+    {'hrsh7th/cmp-buffer'},
+    {'hrsh7th/cmp-path'},
+    {'saadparwaiz1/cmp_luasnip'},
+    {'hrsh7th/cmp-nvim-lsp'},
+    {'hrsh7th/cmp-nvim-lua'},
+
+    -- Snippets
+    {'L3MON4D3/LuaSnip'},
+    {'rafamadriz/friendly-snippets'},
     {
         "joechrisellis/lsp-format-modifications.nvim",
         dependencies = {
